@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booking Page - Piha Lodge</title>
+  <link rel="stylesheet" href="Booking.css"> <!-- You'll need to create this CSS file -->
+</head>
+<body>
+  <div class="container">
+    <h2>Book Your Stay</h2>
+    <form id="booking-form">
+      <label for="check-in-date">Check-In Date:</label>
+      <input type="date" id="check-in-date" name="check-in-date" required>
+
+      <label for="check-out-date">Check-Out Date:</label>
+      <input type="date" id="check-out-date" name="check-out-date" required>
+
+      <label for="room-type">Room Type:</label>
+      <select id="room-type" name="room-type" required>
+        <option value="standard">Standard Room</option>
+        <option value="deluxe">Deluxe Room</option>
+        <option value="suite">Suite</option>
+      </select>
+
+      <label for="guests">Number of Guests:</label>
+      <input type="number" id="guests" name="guests" min="1" required>
+
+      <div class="button-container">
+        <a href="about.html" class="button">Back</a>
+        <button type="button" id="next-button">Next</button>
+      </div>
+    </form>
+    <div class="progress-bar">
+      <!-- Progress bar will be updated via JavaScript -->
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('next-button').addEventListener('click', function() {
+      // Gather information from the form
+      var checkInDate = document.getElementById('check-in-date').value;
+      var checkOutDate = document.getElementById('check-out-date').value;
+      var roomType = document.getElementById('room-type').value;
+      var guests = document.getElementById('guests').value;
+
+      // Store information in session storage for retrieval on the summary page
+      sessionStorage.setItem('checkInDate', checkInDate);
+      sessionStorage.setItem('checkOutDate', checkOutDate);
+      sessionStorage.setItem('roomType', roomType);
+      sessionStorage.setItem('guests', guests);
+
+      // Redirect to the summary page
+      window.location.href = 'summary.html';
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booking Summary - Piha Lodge</title>
+  <link rel="stylesheet" href="Summary.css"> <!-- You'll need to create this CSS file -->
+</head>
+<body>
+  <div class="container">
+    <h2>Booking Summary</h2>
+    <p>Check-In Date: <span id="check-in-date"></span></p>
+    <p>Check-Out Date: <span id="check-out-date"></span></p>
+    <p>Room Type: <span id="room-type"></span></p>
+    <p>Number of Guests: <span id="guests"></span></p>
+    <div class="button-container">
+      <a href="booking.html" class="button back-button">Back</a>
+      <button id="pay-now-button">Pay Now</button>
+    </div>
+  </div>
+
+  <script>
+    // Retrieve information from session storage
+    var checkInDate = sessionStorage.getItem('checkInDate');
+    var checkOutDate = sessionStorage.getItem('checkOutDate');
+    var roomType = sessionStorage.getItem('roomType');
+    var guests = sessionStorage.getItem('guests');
+
+    // Display information on the summary page
+    document.getElementById('check-in-date').textContent = checkInDate;
+    document.getElementById('check-out-date').textContent = checkOutDate;
+    document.getElementById('room-type').textContent = roomType;
+    document.getElementById('guests').textContent = guests;
+  </script>
+</body>
+</html>

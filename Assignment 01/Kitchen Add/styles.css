@@ -1,0 +1,88 @@
+.advertisement {
+  position: relative;
+  width: 200px; /* Adjust width to fit the screen */
+  height: 400px; /* Adjust height as needed */
+  overflow: hidden;
+  margin: auto; /* Center the advertisement horizontally */
+  transform: rotate(-90deg) translateY(-200px); /* Rotate and translate for vertical orientation */
+}
+
+.scene {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+
+.scene img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.headline {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(90deg); /* Rotate headline back to horizontal */
+  font-family: Arial, sans-serif; /* Use suitable fonts */
+  font-size: 16px; /* Adjust font size */
+  color: #570303;
+  text-align: center;
+  white-space: nowrap; /* Prevent text wrapping */
+  opacity: 0;
+  animation: fadeIn 2s ease forwards; /* Fade-in animation */
+}
+
+.company-name {
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+  font-family: Arial, sans-serif; /* Use suitable fonts */
+  font-size: 12px; /* Adjust font size */
+  color: #170858;
+  opacity: 0;
+  animation: fadeIn 2s ease forwards; /* Fade-in animation */
+}
+
+.link {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%) rotate(90deg); /* Rotate link back to horizontal */
+  font-family: Arial, sans-serif; /* Use suitable fonts */
+  font-size: 14px; /* Adjust font size */
+  color: #554205;
+  text-decoration: none;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #49052f;
+  text-align: center;
+  padding: 5px 0; /* Adjust padding */
+  transform: rotate(90deg); /* Rotate footer back to horizontal */
+}
+
+#replayButton {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%) rotate(90deg); /* Rotate button back to horizontal */
+  padding: 5px 10px; /* Adjust padding */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
